@@ -31,5 +31,8 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\*Test.dll'
+    testAssemblyVer2: |
+      **\*Test.dll
+      !**\*nunit.framework.dll
+      !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
